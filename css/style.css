@@ -1,13 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap');
 
-html,body{
+ html,
+body{
 	margin: 0;
 	padding: 0cm;
 }
 
 *,
 *::before,
-*::after{
+*::after {
 	box-sizing: border-box;
 }
 
@@ -30,7 +31,8 @@ h1{
    min-width: 1280px;
    padding: 60px 40px 50px;
    display: flex;
-   flex-flow: row nowrap;
+	flex-flow: row nowrap;
+	align-items:center;
 	margin: 0 auto 5px;
    background-color: white;
 }
@@ -52,27 +54,26 @@ h1{
 	letter-spacing: 0.01em;
 	outline: none;
 	cursor: pointer;
-	transition: background-color .2s ;
+	transition: background-color .2s, color .2s ;
 }
 
-.header+.header__button:hover,
+.header__button:hover,
 .header__button:focus{
 	outline: none;
 	background-color: #23A3FF;
 	color: white;
-}
+} 
 
 .todo-list{
 	display: flex;
 	flex-flow: column nowrap;
 	min-width: 1280px;
-	height: 1200px;
 	padding: 0 40px ;
-}
-
+} 
+/* 
 .todo-list__label{
 	font-size: 24px;
-}
+} */
 
 .todo-list-item{
 	margin-bottom: 30px;
@@ -82,11 +83,11 @@ h1{
 	position: relative;
 	display: flex;
 	flex-flow: row nowrap;
-	align-items: center;
-	cursor: pointer
+	align-items:center;
+	cursor: pointer;
 }
 
-.todo-list-item::before{
+.todo-list-item span::before{
 	content:'';
 	display: block;
 	width: 18px;
@@ -94,15 +95,27 @@ h1{
 	border: 3px solid #fff;
 	border-radius: 50%;
 	background-color: transparent;
-	box-shadow:  0 0 0 2px #D9D9D9;
+	box-shadow:  0 0 0 3px #D9D9D9;
 	margin-right: 14px;
 	transition: background-color .1s;
 }
 
+.todo-list-item__checkbox {
+	position: absolute;
+	top: 0;
+	left: 0;
+	visibility: hidden;
+	pointer-events: none;
+}
 
-/* Кнопка для добавления задачи */
+.todo-list-item__checkbox:checked ~ span::before {
+	background-color: #23A3FF;
+}
+
+ /* Кнопка для добавления задачи  */
 
 .button-add__button{	
+	cursor: pointer;
 	margin-left: 95%;
 	border-radius: 50%;
 	border: none;
@@ -114,7 +127,7 @@ h1{
 	font-size: 33px;
 }
 
-.button-add+.button-add__button:hover,
+.button-add__button:hover,
 .button-add__button:focus{
 	outline: none;
 	background-color: #23A3FF;
@@ -123,7 +136,7 @@ h1{
 
 /* Модальное окно добавления задачи */
 
-.modal-auth {
+ /* .modal-auth {
 	position: fixed;
 	left: 0;
 	top: 0;
@@ -131,6 +144,7 @@ h1{
 	height: 100%;
 	display: none;
 	z-index: 999;
+	background: rgba(0, 0, 0, 0.22);	 ;
 }
 
 .is-open {
@@ -138,7 +152,9 @@ h1{
 }
 
 .modal-auth__dialog {
-	width: 100%;
+	width: 80%;
+	margin-left: auto;
+	margin-right: auto;
 	margin-top: 150px;
 	height: 100%;
 	background: #FFFFFF;
@@ -191,9 +207,21 @@ h1{
 }
 
 .modal-auth__input{
+	font-family: Gilroy;
+font-style: normal;
+font-weight: 500;
+font-size: 16px;
+line-height: 140%;
+
+letter-spacing: 0.01em;
+
+color: #999999;
+
 	width: 100%;
 	height: 150px;
-	border-radius:15px;
+	border: 2px solid #E6E6E6;
+	box-sizing: border-box;
+	border-radius: 10px;
 }
 
 .modal-auth__input:focus{
@@ -233,10 +261,6 @@ h1{
 	border-radius: 10px;
 }
 
-.modal-auth__footer {
-
-} 
-
 .modal-auth .modal-auth__footer {
 	justify-content: flex-end;
-}
+}   */
