@@ -11,6 +11,8 @@ const ToDoListItem = document.querySelector('.todo-list-item');
 
 
 const toggleModalAuth = function () {
+	TaskInput.style.borderColor = '';
+	TaskInput.value = '';
 	modalAuth.classList.toggle('is-open');
 	if (modalAuth.classList.contains("is-open")) {
 		disableScroll();
@@ -20,19 +22,26 @@ const toggleModalAuth = function () {
 	}
 }
 const modalAddTask = function () {
-	modal.textContent = '';
-	let Task = new Object();
-	Task.Tasktext = TaskInput.value;
 	
-	const itemTask = `
-	<label class="todo-list-item todo-list__label">
-		<input  class="todo-list-item__checkbox " type="checkbox">
-		<span>${Task.Tasktext}</span> 
-	</label> 
-		`;
-	modal.insertAdjacentHTML('afterbegin', itemTask)
-	NotTasks.remove();
-	modalAuth.classList.toggle('is-open');
+	if(TaskInput.value.trim()){
+		TaskInput.textContent = '';
+		let Task = new Object();
+		Task.Tasktext = TaskInput.value;	
+		const itemTask = `
+		<label class="todo-list-item todo-list__label">
+			<input  class="todo-list-item__checkbox " type="checkbox">
+			<span>${Task.Tasktext}</span> 
+		</label> 
+			`;
+			modal.insertAdjacentHTML('afterbegin', itemTask)
+		NotTasks.remove();
+		modalAuth.classList.toggle('is-open');
+	}
+	else	{
+		TaskInput.style.borderColor = '#ff0000';
+		TaskInput.value = '';
+	}
+	
 }
 
 
