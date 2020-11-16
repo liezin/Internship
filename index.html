@@ -7,42 +7,41 @@
 	<title>TO DO List</title>
 </head>
 <body>
-		<header class = "header sticky"> 
-			<h1>Сегодня </h1>
-			<button class="header__button">Править</button>
-		</header>
+	<header class = "header sticky"> 
+		<h1>Сегодня </h1>
+		<button class="header__button">Править</button>
+	</header>
 
 		<section class="todo-list">			
-				<label class="todo-list-item todo-list__label">
-					<input  class="todo-list-item__checkbox " type="checkbox">
-					<span>Список задач пуст</span> 
-				</label>
-				<label class="todo-list__label" > Список задач пуст</label>		
-
 			
-			
-
-<!-- <div class="button-addn sticky_button">
-	<button class="button-add__button">+</button>
-</div>
+			 <label class="todo-list-item todo-list__label">
+				<input  class="todo-list-item__checkbox " type="checkbox">
+				<span>Список задач пуст1</span> 
+			</label> 
+					
+			<label class="todo-list__label todo-list__not" > 
+				Список задач пуст
+			</label>			
 
 		</section>
 
+	<div class="button-add sticky__button">
+		<button class="button-add__button">+</button>
+	</div>
+
 		<div class="modal-auth">
 			<div class="modal-auth__dialog modal-auth__auth">
-				<form id="logInForm">
 					<fieldset class="modal-auth__body">
-						<input class="modal-auth__input" type="text">
+						<textarea class="modal-auth__input" rows="10" cols="45" name="text" placeholder="Введите текст задачи"></textarea>
 					</fieldset>
 					<div class="modal-auth__footer">
 						<div class="modal-auth__footer-buttons">
-							<button class="footer-buttons__close">Закрыть</button>
-							<button class="footer-buttons__add ">Добавить</button>
+							<button class="buttons__close">Закрыть</button>
+							<button class="buttons__add">Добавить</button>
 						</div>
 					</div>
-				</form>
 			</div>
-		</div> -->
+		</div>
 
 	<script src="js/main.js"></script>
 	<script src="js/disabledScroll.js"></script>

@@ -1,9 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap');
 
- html,
+@import url('https://fonts.googleapis.com/css2?family=Didact+Gothic&display=swap');
+
+html,
 body{
 	margin: 0;
 	padding: 0cm;
+	font-family: 'Didact Gothic', sans-serif;	
 }
 
 *,
@@ -16,25 +18,18 @@ h1{
 	margin: 0;
 }
 
-.sticky {
-   position: sticky;
-   top: 0;
-} 
-
-.sticky_button {
-   position: sticky;
-   bottom: 0;
-} 
+/* Оформление заголовка и его кнопки */
 
 .header{
-	position: sticky;
-   min-width: 1280px;
-   padding: 60px 40px 50px;
+	position: fixed;
+	top: 0;
+   min-width: 100%;
+   padding: 60px 40px 30px;
    display: flex;
 	flex-flow: row nowrap;
-	align-items:center;
 	margin: 0 auto 5px;
-   background-color: white;
+	z-index: 1;
+	background-color: white;
 }
 
 .header h1{
@@ -55,6 +50,7 @@ h1{
 	outline: none;
 	cursor: pointer;
 	transition: background-color .2s, color .2s ;
+	font-family: 'Didact Gothic', sans-serif;
 }
 
 .header__button:hover,
@@ -64,19 +60,23 @@ h1{
 	color: white;
 } 
 
+/* Оформление списка задач */
+
 .todo-list{
 	display: flex;
 	flex-flow: column nowrap;
-	min-width: 1280px;
-	padding: 0 40px ;
+	min-width: 100%;
+	padding: 30px 40px ;
+	margin-top: 120px;
+	margin-bottom: auto;
 } 
-/* 
+
 .todo-list__label{
 	font-size: 24px;
-} */
+}
 
 .todo-list-item{
-	margin-bottom: 30px;
+	margin-bottom: 31px;
 }
 
 .todo-list-item span {
@@ -108,23 +108,43 @@ h1{
 	pointer-events: none;
 }
 
-.todo-list-item__checkbox:checked ~ span::before {
+/* Красная кнопка с минусом для удаления задачи */
+
+.todo-list-item__checkbox_delete{	
+	cursor: pointer;
+	border-radius: 50%;
+	border: none;
+	background: rgba(253, 60, 60, 0.419);
+	width: 22px;
+	height: 22px;
+	color:white;
+	font-size: 10px;
+}
+
+/* Изменение вида при отметке */
+
+.todo-list-item__checkbox:checked ~ span::before  {
 	background-color: #23A3FF;
+}
+.todo-list-item__checkbox:checked ~ span  {
+	color:rgb(106, 106, 106);
 }
 
  /* Кнопка для добавления задачи  */
 
 .button-add__button{	
-	cursor: pointer;
-	margin-left: 95%;
-	border-radius: 50%;
-	border: none;
-	background: #FFFFFF;
-	box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.22);	
 	width: 60px;
-	height: 60px;
-	color: #23A3FF;
+	height: 60px;	
+	position: fixed;
+	right: 5%;
+	bottom:5%;
 	font-size: 33px;
+	color: #23A3FF;
+	border: none;
+	border-radius: 50%;	
+	background: #FFFFFF;
+	box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.22);
+	cursor: pointer;
 }
 
 .button-add__button:hover,
@@ -136,7 +156,7 @@ h1{
 
 /* Модальное окно добавления задачи */
 
- /* .modal-auth {
+ .modal-auth {
 	position: fixed;
 	left: 0;
 	top: 0;
@@ -207,18 +227,16 @@ h1{
 }
 
 .modal-auth__input{
-	font-family: Gilroy;
-font-style: normal;
-font-weight: 500;
-font-size: 16px;
-line-height: 140%;
-
-letter-spacing: 0.01em;
-
-color: #999999;
-
+	font-family: 'Didact Gothic', sans-serif;
+	font-style: normal;	
+	font-weight: 500;
+	font-size: 20px;
+	padding: 20px 0 100px 20px;
+	line-height: 140%;
+	letter-spacing: 0.01em;
+	color: #999999;
 	width: 100%;
-	height: 150px;
+	height: 200px;
 	border: 2px solid #E6E6E6;
 	box-sizing: border-box;
 	border-radius: 10px;
@@ -233,34 +251,37 @@ color: #999999;
 	
 }
 
-.footer-buttons__close{
+.buttons__close{
 	margin-left: 20px;
 	background: #F2F2F2;
+	color:#4D4D4D	;
 	border-radius: 6px;
 	border:  none;
 	padding:  9px 36px;
-	font-size: 16px;
+	font-size: 20px;
 	line-height: 140%;
 	letter-spacing: 0.01em;
 	outline: none;
 	cursor: pointer;
 	transition: background-color .2s ;
+	font-family: 'Didact Gothic', sans-serif;
 }
 
-.footer-buttons__add{
+.buttons__add{
 	margin-right: 20px;
 	border:  none;
 	padding:  9px 32px;
-	font-size: 16px;
+	font-size: 20px;
 	line-height: 140%;
 	letter-spacing: 0.01em;
-	outline: none;
 	cursor: pointer;
+	outline: none;
 	color: white;
 	background: #23A3FF;
 	border-radius: 10px;
+	font-family: 'Didact Gothic', sans-serif;
 }
 
 .modal-auth .modal-auth__footer {
 	justify-content: flex-end;
-}   */
+}  
