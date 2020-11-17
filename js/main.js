@@ -40,10 +40,8 @@ const modalAddTask = function () {
 	else	{
 		TaskInput.style.borderColor = '#ff0000';
 		TaskInput.value = '';
-	}
-	
+	}	
 }
-
 
 
 const modalEditTask = function () {

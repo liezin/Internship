@@ -164,7 +164,8 @@ h1{
 	height: 100%;
 	display: none;
 	z-index: 999;
-	background: rgba(0, 0, 0, 0.22);	 ;
+	background: rgba(0, 0, 0, 0.22);	 
+	justify-content: flex-end;
 }
 
 .is-open {
@@ -221,17 +222,13 @@ h1{
 	right: 20px;
 }
 
-.modal-auth__body {
-	border: none;
-	margin-bottom: 22px;
-}
-
 .modal-auth__input{
 	font-family: 'Didact Gothic', sans-serif;
 	font-style: normal;	
 	font-weight: 500;
 	font-size: 20px;
 	padding: 20px 0 100px 20px;
+	margin-bottom: 22px;
 	line-height: 140%;
 	letter-spacing: 0.01em;
 	color: #999999;
@@ -245,7 +242,7 @@ h1{
 .modal-auth__input:focus{
 	outline: none;
 }
-.modal-auth__footer-buttons{
+.modal-auth__footer{
 	display: flex;
 	justify-content: space-between;
 	
@@ -281,7 +278,3 @@ h1{
 	border-radius: 10px;
 	font-family: 'Didact Gothic', sans-serif;
 }
-
-.modal-auth .modal-auth__footer {
-	justify-content: flex-end;
-}  
