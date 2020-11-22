@@ -1,0 +1,28 @@
+doctype html
+html(lang="ru")
+	head
+		meta(charset="UTF-8")
+		meta(name="viewport", content="width=device-width, initial-scale=1.0")
+		link(rel='stylesheet', href='/Source/scss/dist/style.css')
+		title TO DO List
+	body
+		header.header
+			h1.
+				Сегодня 	
+			button.header__button.
+				Править
+		section.todo-list
+			label().todo-list__label.todo-list__not.
+				Список задач пуст
+		button.button-add__button.
+			+
+		
+		.modal-auth
+			.modal-auth__dialog.modal-auth__auth
+				textarea.modal-auth__input(name="text", cols="45", rows="10",placeholder="Введите текст задачи") 
+				.modal-auth__buttons
+					button.buttons__close.
+						Закрыть
+					button.buttons__add.
+						Добавить
+		script(src="/js/main.js")

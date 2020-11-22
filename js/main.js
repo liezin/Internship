@@ -21,10 +21,11 @@ const toggleModalAuth = function () {
 		enableScroll();
 	}
 }
+
 const modalAddTask = function () {
 	
 	if(TaskInput.value.trim()){
-		TaskInput.textContent = '';
+		TaskEdit.style.visibility = 'visible';
 		let Task = new Object();
 		Task.Tasktext = TaskInput.value;	
 		const itemTask = `
@@ -36,6 +37,9 @@ const modalAddTask = function () {
 			modal.insertAdjacentHTML('afterbegin', itemTask)
 		NotTasks.remove();
 		modalAuth.classList.toggle('is-open');
+		if(!NotTasks){
+			
+		}
 	}
 	else	{
 		TaskInput.style.borderColor = '#ff0000';
@@ -45,13 +49,22 @@ const modalAddTask = function () {
 
 
 const modalEditTask = function () {
-	TaskEdit.style.text = "Отменить";
+
+	if(TaskEdit.innerHTML == `Отменить`){
+		TaskEdit.textContent = "Править";
+	}
+
+	else {
+		TaskEdit.textContent = "Отменить";
+	}
 }
 
 
 const toggleModal = function () {
 	modal.classList.toggle("is-open");
 }
+
+
 
 buttonAuth.addEventListener('click', toggleModalAuth);
 modalCloseAuth.addEventListener('click', toggleModalAuth);

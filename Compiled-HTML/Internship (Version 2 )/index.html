@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="/Source/scss/dist/style.css">
+	<title>TO DO List</title>
+</head>
+
+<body>
+	<header class="header">
+		<h1>Сегодня </h1><button class="header__button">Править</button>
+	</header>
+	<section class="todo-list"><label class="todo-list__label todo-list__not">Список задач пуст</label></section><button
+		class="button-add__button">+
+	</button>
+	<div class="modal-auth">
+		<div class="modal-auth__dialog modal-auth__auth"><textarea class="modal-auth__input" name="text" cols="45"
+				rows="10" placeholder="Введите текст задачи"> </textarea>
+			<div class="modal-auth__buttons"><button class="buttons__close">Закрыть</button><button
+					class="buttons__add">Добавить</button></div>
+		</div>
+	</div>
+	<script src="/js/main.js"></script>
+	<script src="/js/disabledScroll.js"></script>
+</body>
+
+</html>
