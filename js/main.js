@@ -24,7 +24,6 @@ const toggleModalAuth = function () {
 const modalAddTask = function () {
 	
 	if(TaskInput.value.trim()){
-		TaskInput.textContent = '';
 		let Task = new Object();
 		Task.Tasktext = TaskInput.value;	
 		const itemTask = `
@@ -45,7 +44,14 @@ const modalAddTask = function () {
 
 
 const modalEditTask = function () {
-	TaskEdit.style.text = "Отменить";
+
+	if(TaskEdit.innerHTML == `Отменить`){
+		TaskEdit.textContent = "Править";
+	}
+
+	else {
+		TaskEdit.textContent = "Отменить";
+	}
 }
 
 
